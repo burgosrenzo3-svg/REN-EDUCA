@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Modulos | REN EDUCA</title>
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/modulos.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+    <main class="module-shell">
+        <a class="back-link" href="panel-docente.html">Volver al panel docente</a>
+
+        <header class="page-header">
+            <p class="eyebrow">Editor de curso</p>
+            <h1 id="tituloCurso">Gestion de modulos</h1>
+            <p>Organiza el curso en unidades claras para que el estudiante pueda avanzar paso a paso.</p>
+        </header>
+
+        <section class="module-layout">
+            <form class="module-form" id="moduloForm">
+                <h2>Nuevo modulo</h2>
+                <label>
+                    Nombre del modulo
+                    <input type="text" id="nombreModulo" placeholder="Ej. Componentes internos de la PC">
+                </label>
+                <button id="btnCrearModulo" type="submit">Crear modulo</button>
+            </form>
+
+            <section class="module-list-panel">
+                <h2>Modulos creados</h2>
+                <div id="modulosContainer" class="module-list"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/tema.js"></script>
+    <script src="../js/proteger-docente.js"></script>
+    <script src="../js/modulos.js"></script>
+</body>
+</html>

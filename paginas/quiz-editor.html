@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Quiz | REN EDUCA</title>
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/quiz.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+    <main class="quiz-shell">
+        <a class="back-link" id="linkVolverModulos" href="modulos.html">Volver a modulos</a>
+
+        <header class="page-header">
+            <p class="eyebrow">Editor de evaluacion</p>
+            <h1 id="tituloModuloQuiz">Quiz del modulo</h1>
+            <p>Agrega preguntas de opcion multiple o verdadero/falso. El estudiante necesita responder todo correctamente (100%) para completar el modulo.</p>
+        </header>
+
+        <section class="quiz-layout">
+            <form class="quiz-form" id="preguntaForm">
+                <h2 id="formTitulo">Nueva pregunta</h2>
+
+                <label>
+                    Tipo de pregunta
+                    <select id="tipoPregunta">
+                        <option value="opcion">Opcion multiple</option>
+                        <option value="vf">Verdadero / Falso</option>
+                    </select>
+                </label>
+
+                <label>
+                    Enunciado
+                    <textarea id="textoPregunta" placeholder="Escribe la pregunta..." required></textarea>
+                </label>
+
+                <div id="opcionesWrapper" class="opciones-wrapper">
+                    <p class="campo-label">Opciones (marca la correcta)</p>
+                    <div class="opcion-row">
+                        <input type="radio" name="correctaRadio" value="0" checked>
+                        <input type="text" class="opcion-input" placeholder="Opcion 1" data-index="0">
+                    </div>
+                    <div class="opcion-row">
+                        <input type="radio" name="correctaRadio" value="1">
+                        <input type="text" class="opcion-input" placeholder="Opcion 2" data-index="1">
+                    </div>
+                    <div class="opcion-row">
+                        <input type="radio" name="correctaRadio" value="2">
+                        <input type="text" class="opcion-input" placeholder="Opcion 3 (opcional)" data-index="2">
+                    </div>
+                    <div class="opcion-row">
+                        <input type="radio" name="correctaRadio" value="3">
+                        <input type="text" class="opcion-input" placeholder="Opcion 4 (opcional)" data-index="3">
+                    </div>
+                </div>
+
+                <div id="vfWrapper" class="vf-wrapper" style="display:none">
+                    <p class="campo-label">Respuesta correcta</p>
+                    <div class="vf-options">
+                        <label class="vf-option">
+                            <input type="radio" name="vfRadio" value="verdadero" checked>
+                            Verdadero
+                        </label>
+                        <label class="vf-option">
+                            <input type="radio" name="vfRadio" value="falso">
+                            Falso
+                        </label>
+                    </div>
+                </div>
+
+                <div class="acciones-form">
+                    <button type="submit" id="btnGuardarPregunta">Agregar pregunta</button>
+                    <button type="button" class="btn-secondary" id="btnCancelarPregunta">Cancelar edicion</button>
+                </div>
+            </form>
+
+            <section class="quiz-list-panel">
+                <div class="section-title">
+                    <h2>Preguntas del quiz</h2>
+                    <p id="contadorPreguntas">0 preguntas creadas</p>
+                </div>
+                <div id="preguntasContainer" class="quiz-list"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/tema.js"></script>
+    <script src="../js/proteger-docente.js"></script>
+    <script src="../js/quiz-editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<header class="header">
+    <a class="logo" href="INICIO_URL">REN EDUCA</a>
+
+    <nav class="nav">
+        <a href="INICIO_URL">Inicio</a>
+        <a href="CURSOS_URL">Cursos</a>
+        <a href="QUIENES_URL">Quienes somos</a>
+        <a href="CONTACTO_URL">Contacto</a>
+        <button id="btnTheme" class="btn-theme" type="button" aria-label="Cambiar tema">
+            <svg class="icon-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.4M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/></svg>
+            <svg class="icon-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M20.5 14.7A8.5 8.5 0 1 1 9.3 3.5a8.5 8.5 0 0 0 11.2 11.2Z"/></svg>
+        </button>
+
+        <div id="navInvitado" class="nav-invitado">
+            <button class="btn-login" id="btnLogin" type="button">Ingresar</button>
+            <button class="btn-register" id="btnRegistro" type="button">Crear cuenta</button>
+        </div>
+
+        <div id="navUsuario" class="nav-usuario" style="display:none">
+            <a id="linkPanelUsuario" class="btn-panel-link" href="#">
+                <span id="navNombreUsuario">Usuario</span>
+            </a>
+            <button id="btnSalirHeader" class="btn-logout-header" type="button">Salir</button>
+        </div>
+    </nav>
+</header>
+
+<div class="modal" id="modalLogin">
+    <div class="modal-contenido">
+        <span class="cerrar-modal" id="cerrarLogin">&times;</span>
+        <h2>Iniciar sesion</h2>
+        <p class="modal-subtitulo">Te enviaremos un enlace de acceso a tu correo. Sin contrasenas.</p>
+
+        <form id="loginForm">
+            <input type="email" id="loginCorreo" placeholder="Correo electronico" autocomplete="email" required>
+
+            <p id="loginError" class="form-error" style="display:none"></p>
+            <p id="loginExito" class="form-exito" style="display:none"></p>
+
+            <button type="submit">Enviarme el enlace</button>
+        </form>
+
+        <p class="modal-switch">No tienes cuenta? <a href="#" id="irARegistro">Crear cuenta</a></p>
+    </div>
+</div>
+
+<div class="modal" id="modalRegistro">
+    <div class="modal-contenido">
+        <span class="cerrar-modal" id="cerrarRegistro">&times;</span>
+        <h2>Crear cuenta</h2>
+        <p class="modal-subtitulo">Sin contrasenas: solo confirma tu correo y listo.</p>
+
+        <form id="registroForm">
+            <input type="text" id="registroNombre" placeholder="Nombre completo" autocomplete="name" required>
+            <input type="email" id="registroCorreo" placeholder="Correo electronico" autocomplete="email" required>
+
+            <select id="registroRol" required>
+                <option value="">Selecciona un rol</option>
+                <option value="estudiante">Estudiante</option>
+                <option value="docente">Docente</option>
+            </select>
+
+            <p id="registroError" class="form-error" style="display:none"></p>
+            <p id="registroExito" class="form-exito" style="display:none"></p>
+
+            <button type="submit">Enviarme el enlace</button>
+        </form>
+
+        <p class="modal-switch">Ya tienes cuenta? <a href="#" id="irALogin">Iniciar sesion</a></p>
+    </div>
+</div>

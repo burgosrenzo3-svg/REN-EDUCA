@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Estudiante | REN EDUCA</title>
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/panel-estudiante.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/preview-bar.css">
+</head>
+<body>
+    <main class="student-shell">
+        <header class="student-hero">
+            <div>
+                <p class="eyebrow">Aula virtual</p>
+                <h1>Continua aprendiendo a tu ritmo</h1>
+                <p class="lead">Elige un curso, revisa sus modulos y marca tu avance cuando termines cada tema.</p>
+            </div>
+            <div class="student-hero-actions">
+                <div class="usuario-dropdown usuario-dropdown-claro" id="usuarioDropdown">
+                    <button type="button" class="usuario usuario-claro" id="usuarioToggle" aria-haspopup="true" aria-expanded="false">
+                        <img id="fotoUsuario" class="foto-usuario" src="../img/user.svg" alt="Usuario">
+                        <div>
+                            <strong id="nombreUsuario">Estudiante</strong>
+                            <p id="rolUsuario">Estudiante</p>
+                        </div>
+                        <svg class="usuario-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+
+                    <div class="usuario-menu" id="usuarioMenu" role="menu">
+                        <div class="usuario-menu-header">
+                            <strong id="menuNombreUsuario">Estudiante</strong>
+                            <p id="menuCorreoUsuario">correo@renEduca.com</p>
+                        </div>
+
+                        <div class="usuario-menu-acciones">
+                            <button type="button" class="usuario-menu-item" id="btnMiPerfil">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+                                Mi perfil
+                            </button>
+
+                            <button type="button" class="usuario-menu-item" id="btnCambiarTemaMenu">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.4M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/></svg>
+                                <span id="textoCambiarTemaMenu">Modo oscuro</span>
+                            </button>
+
+                            <a class="usuario-menu-item" href="../index.html">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg>
+                                Ir al inicio
+                            </a>
+                        </div>
+
+                        <div class="usuario-menu-footer">
+                            <button type="button" class="usuario-menu-item usuario-menu-danger" id="btnCerrarSesion">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>
+                                Cerrar sesión
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="summary-grid">
+            <article>
+                <span id="totalCursos">0</span>
+                <p>Cursos disponibles</p>
+            </article>
+            <article>
+                <span id="totalModulos">0</span>
+                <p>Modulos publicados</p>
+            </article>
+            <article>
+                <span id="avancePromedio">0%</span>
+                <p>Avance promedio</p>
+            </article>
+        </section>
+
+        <section class="catalog-section">
+            <div class="section-title">
+                <h2>Catalogo de cursos</h2>
+                <p>Tu progreso queda guardado en tu cuenta.</p>
+            </div>
+            <div id="cursosContainer" class="courses-grid"></div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/tema.js"></script>
+    <script src="../js/proteger-estudiante.js"></script>
+    <script src="../js/preview-bar.js"></script>
+    <script src="../js/cursos-estudiante.js"></script>
+    <script src="../js/cerrar-sesion.js"></script>
+    <script src="../js/perfil.js"></script>
+    <script src="../js/usuario-menu.js"></script>
+</body>
+</html>
