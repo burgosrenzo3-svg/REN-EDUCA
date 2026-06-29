@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | REN EDUCA</title>
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/quiz.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/preview-bar.css">
+</head>
+<body>
+    <main class="quiz-shell" id="quizShell">
+        <a class="back-link" id="linkVolverCurso" href="curso.html">Volver al curso</a>
+
+        <header class="page-header">
+            <p class="eyebrow">Evaluacion del modulo</p>
+            <h1 id="tituloModuloQuiz">Quiz</h1>
+            <p>Responde todas las preguntas correctamente para marcar este modulo como completado. Puedes intentarlo las veces que necesites.</p>
+        </header>
+
+        <div id="quizContenedor"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/tema.js"></script>
+    <script src="../js/proteger-sesion.js"></script>
+    <script src="../js/preview-bar.js"></script>
+    <script src="../js/quiz.js"></script>
+</body>
+</html>

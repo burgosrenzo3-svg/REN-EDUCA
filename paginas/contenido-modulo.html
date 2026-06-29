@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenido del Modulo | REN EDUCA</title>
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/contenido-modulo.css">
+    <link rel="stylesheet" href="../css/subida-archivos.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+    <main class="content-shell">
+        <a class="back-link" href="modulos.html">Volver a modulos</a>
+
+        <header class="page-header">
+            <p class="eyebrow">Editor de contenido</p>
+            <h1 id="nombreModulo">Contenido del modulo</h1>
+            <p>Agrega teoria, recursos visuales y materiales externos para el estudiante.</p>
+        </header>
+
+        <form class="content-form" id="contenidoForm">
+            <label>
+                Titulo del tema
+                <input type="text" id="tituloContenido" placeholder="Ej. Que es la placa madre">
+            </label>
+
+            <label>
+                Desarrollo del tema
+                <textarea id="textoContenido" placeholder="Escribe el contenido que leera el estudiante..."></textarea>
+            </label>
+
+            <div class="form-row">
+                <label>
+                    Imagen (enlace)
+                    <div class="campo-archivo" id="campoImagenContenido">
+                        <input type="url" id="imagenContenido" placeholder="https://ejemplo.com/imagen.jpg">
+                        <p class="archivo-ayuda" id="ayudaImagenContenido">Pega el enlace de la imagen.</p>
+                        <img id="previewImagenContenido" class="archivo-preview" style="display:none" alt="Vista previa">
+                    </div>
+                </label>
+
+                <label>
+                    Video (enlace)
+                    <div class="campo-archivo" id="campoVideoContenido">
+                        <input type="url" id="videoContenido" placeholder="https://youtube.com/watch?v=... o enlace directo .mp4">
+                        <p class="archivo-ayuda" id="ayudaVideoContenido">Pega el enlace del video (YouTube, Vimeo o .mp4).</p>
+                        <video id="previewVideoContenido" class="archivo-preview-video" style="display:none" controls></video>
+                    </div>
+                </label>
+            </div>
+
+            <label>
+                PDF o material de apoyo (enlace)
+                <div class="campo-archivo" id="campoPdfContenido">
+                    <input type="url" id="pdfContenido" placeholder="https://ejemplo.com/material.pdf">
+                    <p class="archivo-ayuda" id="ayudaPdfContenido">Pega el enlace del PDF o material.</p>
+                </div>
+            </label>
+
+            <button id="btnGuardarContenido" type="submit">Guardar contenido</button>
+            <p id="mensajeGuardado" class="save-message"></p>
+        </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/tema.js"></script>
+    <script src="../js/proteger-docente.js"></script>
+    <script src="../js/contenido-modulo.js"></script>
+</body>
+</html>
